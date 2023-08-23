@@ -1,10 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-// 
 class Comment extends Model {}
-
-// allow Null = true allows for comment deletion
 
 Comment.init(
 
@@ -26,7 +23,6 @@ Comment.init(
         type: DataTypes.STRING,
     },
 
-    // relationships referenced in models/index.js
     blog_id: {
       type: DataTypes.INTEGER,
       references: {

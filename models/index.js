@@ -3,7 +3,6 @@ const Blog = require('./blog');
 const Comment = require('./comment');
 
 
-// creates relationship between tables
 // user can create multiple blogs
 User.hasMany(Blog, {
   foreignKey: 'user_id',
@@ -22,7 +21,7 @@ Blog.hasMany(Comment,{
   foreignKey: 'blog_id'
 })
 
-// states relationship that comment belongs to user specified by their user ID
+// Comment belongs to user by their user ID
 Comment.belongsTo(User, {
     foreignKey: 'user_id',
 })

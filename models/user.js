@@ -1,8 +1,5 @@
-// creates User model
-
 const { Model, DataTypes } = require('sequelize');
 
-// install bcrypt npm dependency to hash user passwords
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
@@ -41,17 +38,10 @@ User.init(
 
   {
     hooks: {
-        // data
       beforeCreate: async (newUser) => {
         newUser.password = await bcrypt.hash(newUser.password, 10);
         return newUser;
       },
-
-        // data
-      // beforeUpdate: async (updatedUser) => {
-      //   updatedUser.password = await bcrypt.hash(updatedUser.password, 10);
-      //   return updatedUser;
-      // },
     },
 
     sequelize,

@@ -4,7 +4,6 @@ const { Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 
-// basic get route to find all comments posted by passing through comments' data as json
 router.get('/', (req,res) => {
 
     Comment.findAll({})
@@ -18,7 +17,7 @@ router.get('/', (req,res) => {
 });
 
 
-// can view comment by its specific comment id
+// Comment by comment id
 router.get('/:id', (req, res) => {
 
     Comment.findAll({
@@ -36,7 +35,7 @@ router.get('/:id', (req, res) => {
 });
 
 
-// allows for creation of new comment
+// Creation of new comment
 router.post('/', async (req, res) => {
 
   try {
@@ -54,7 +53,7 @@ router.post('/', async (req, res) => {
 });
 
 
-// allows for comment deletion
+// Comment deletion
 // may need to test setting allowNull to true
 router.delete('/:id', withAuth, async (req, res) => {
 

@@ -5,7 +5,7 @@ const userRoutes = require('./userRoutes');
 const commentRoutes = require('./commentRoutes');
 
 
-// will need to direct as localhost:3001/blogs in INSOMNIA
+// localhost:3001/blogs
 router.use('/blogs', blogRoutes);
 
 // localhost:3001/users

@@ -1,10 +1,8 @@
-// includes POST routes to post new data
-
 const router = require('express').Router();
 const { User } = require('../../models');
 
 
-// checks if user is logged in with user data
+
 router.post('/', async (req, res) => {
   try {
     const data = await User.create(req.body);
@@ -25,7 +23,6 @@ router.post('/', async (req, res) => {
 });
 
 
-// logs user in
 router.post('/login', async (req, res) => {
   try {
     const data = await User.findOne({ 
@@ -39,10 +36,9 @@ router.post('/login', async (req, res) => {
       return;
     }
 
-    // validates if password is correct
     const correctPassword = await data.checkPassword(req.body.password);
 
-    console.log("TEST HELLO!");
+    console.log("test hello world");
 
     if (!correctPassword) {
       res
@@ -55,7 +51,7 @@ router.post('/login', async (req, res) => {
       req.session.user_id = data.id;
       req.session.logged_in = true;
       
-      res.json({ user: data, message: "Login successful!" });
+      res.json({ user: data, message: "Login successful" });
     });
 
   } catch (err) {
@@ -65,10 +61,8 @@ router.post('/login', async (req, res) => {
 });
 
 
-// logs user out
 router.post('/logout', (req, res) => {
 
-// done with session.destroy
   if (req.session.logged_in) {
     req.session.destroy(() => {
       res.status(204).end();

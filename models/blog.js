@@ -3,7 +3,6 @@ const sequelize = require('../config/connection');
 
 class Blog extends Model {}
 
-// creates model for Blog
 Blog.init(
 
   {
@@ -24,7 +23,6 @@ Blog.init(
     },
 
 
-    // setting allowNull to true would allow for deletion
     date_created: {
       type: DataTypes.DATE,
       allowNull: false,
