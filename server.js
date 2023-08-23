@@ -1,6 +1,5 @@
 // Middleware
 
-
 const routes = require('./controllers');
 const helpers = require('./utils/helpers');
 const express = require('express');
@@ -30,7 +29,6 @@ const sess = {
 
 app.use(session(sess));
 
-// tells express.js which template engine we will use
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 

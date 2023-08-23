@@ -1,9 +1,6 @@
 const loginForm = async (event) => {
-
-    // prevents event bubbling
     event.preventDefault();
 
-    // need to match these ID's later in handlebars
     const username = document.querySelector('#username-login').value.trim();
     const password = document.querySelector('#password-login').value;
   

@@ -21,9 +21,6 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
-
-// may need to set allowNull to be true to allow for deletion in /models/Blog.js. Can test later.
-// uses data from blog
 router.delete('/:id', withAuth, async (req, res) => {
 
   try {
