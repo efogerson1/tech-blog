@@ -24,7 +24,7 @@ router.get('/', async (req, res) => {
 
 		res.render('homepage', {
 			multBlogs,
-			logged_in: req.session.logged_in
+			// logged_in: req.session.logged_in
 		});
 	} 
     
@@ -33,9 +33,6 @@ router.get('/', async (req, res) => {
 		res.status(500).json(err);
 	}
 });
-
-
-// console.log("TEST TEST TEST HERE???? TEST ON HANDLEBARS");
 
 
 // able to get and redirect to specific blog by ID in route
@@ -59,6 +56,7 @@ router.get('/blog/:id', async (req, res) => {
 		const blog = data.get({
 			plain: true
 		});
+		console.log(blog)
 
 		res.render('blog', {
 			...blog,
@@ -72,8 +70,6 @@ router.get('/blog/:id', async (req, res) => {
 		res.status(500).json(err);
 	}
 });
-
-// console.log("TEST TEST TEST HERE???? TEST ON HANDLEBARS");
 
 
 // Dashboard page

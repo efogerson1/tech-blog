@@ -15,6 +15,8 @@ const signup = async (event) => {
   
       if (response.ok) {
         document.location.replace('/dashboard');
+      } else if (password.length < 6){
+        alert("Password must be 6 characters in length")
       } else {
         alert("Incorrect username or password.");
       }

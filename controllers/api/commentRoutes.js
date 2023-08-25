@@ -37,7 +37,7 @@ router.get('/:id', (req, res) => {
 
 // Creation of new comment
 router.post('/', async (req, res) => {
-
+console.log(req.params.id)
   try {
     const freshComment = await Comment.create({
       ...req.body,

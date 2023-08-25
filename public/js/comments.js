@@ -2,7 +2,7 @@ const commentHandler = async function (event) {
     
 	event.preventDefault();
 
-	const blog = document.querySelector('.new-comment-form').dataset.blogid;
+	const blog_id = document.querySelector('.new-comment-form').dataset.blogid;
 	const comment_description = document.querySelector('#comment_description').value.trim();
 
 
@@ -12,7 +12,7 @@ const commentHandler = async function (event) {
 		await fetch('/api/comments', {
 			method: 'POST',
 			body: JSON.stringify({
-				blog,
+				blog_id,
 				comment_description,
 			}),
 
